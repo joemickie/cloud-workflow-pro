@@ -9,24 +9,44 @@ const app = express();
 app.use(bodyParser.json());
 
 // Auth routes
-app.post('/signup', async (req, res) => {
+app.post('/auth/signup', async (req, res) => {
   const { username, password } = req.body;
   res.send(await auth.signUp(username, password));
 });
 
+app.post('/auth/signin', async (req, res) => {
+  const { username, password } = req.body;
+  res.send(await auth.signIn(username, password));
+});
+
 // CRUD routes
-app.post('/item', async (req, res) => {
+app.post('/items', async (req, res) => {
+  res.send(await crud.getItems());
+});
+
+app.post('/items', async (req, res) => {
   res.send(await crud.createItem(req.body));
 });
 
+app.put('/items/:id', async (req, res) => {
+  const { id } = req.params;
+  const updatedItem = req.body;
+  res.send(await crud.updateItem(id, updatedItem));
+});
+
+app.delete('/items/:id', async (req, res) => {
+  const { id } = req.params;
+  res.send(await crud.deleteItem(id));
+});
+
 // Payment routes
-app.post('/payment', async (req, res) => {
+app.post('/payment/charge', async (req, res) => {
   const { amount, currency } = req.body;
   res.send(await payments.createPaymentIntent(amount, currency));
 });
 
 // Maps routes
-app.get('/location', async (req, res) => {
+app.get('/maps/location', async (req, res) => {
   const { address } = req.query;
   res.send(await maps.getLocation(address as string));
 });
