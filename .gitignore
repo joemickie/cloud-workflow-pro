@@ -1,0 +1,57 @@
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript output
+dist/
+build/
+
+# Environment variables
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# IDE-specific files
+.vscode/
+.idea/
+*.iml
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Debug and crash reports
+*.stackdump
+*.pid
+
+# AWS specific
+.aws-sam/
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Deployment artifacts
+deployments/
+tmp/
+
+# Test output
+coverage/
+
+# Generated files
+*.map
+*.cache/
+*.tsbuildinfo
+
+# Miscellaneous
+*.bak
+*.swp
+*.swo
+*.orig
