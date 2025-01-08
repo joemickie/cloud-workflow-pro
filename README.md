@@ -78,7 +78,7 @@ GOOGLE_MAPS_API_KEY=your-google-maps-api-key
 
 1. **Clone the repository:**
    ```bash
-   git clone https://github.com/your-username/cloud-workflow-pro.git
+   git clone https://github.com/joemickie/cloud-workflow-pro.git
    cd cloud-workflow-pro
    ```
 
